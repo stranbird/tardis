@@ -2,18 +2,16 @@
   <div class="content-main highlight">
     <p id="notice"><%= notice %></p>
 
-    <h1>概览</h1>
+    <div class="row">
+      <%= image_tag "/img/p1931122747.jpg", class: "col-md-5" %>
 
-    <p>
-      <b>Name:</b>
-      <%= @place.name %>
-    </p>
-
-
-    <%= link_to 'Edit', edit_place_path(@place) %> |
-    <%= link_to 'Back', places_path %>
-
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, nobis, non, esse, repellendus deleniti veritatis eius tempora facere fuga saepe aliquam assumenda nam ex expedita voluptatem vitae repudiandae magnam quos.
+      <div class="col-md-7">
+        <h2><%= @place.name %></h2>
+        <p>曼谷是泰国首都与最大城市，在当地华人社区亦作泰京，为泰国政治、经济、贸易、交通、文化、科技、教育、与各方面中心。位于昭披耶河东岸，近暹罗湾。</p>
+        <%#= link_to 'Edit', edit_place_path(@place) %>
+        <%#= link_to 'Back', places_path %>
+      </div>
+    </div>
   </div>
 
   <div class="content-main highlight">
@@ -25,9 +23,291 @@
 
   <div class="content-main highlight">
     <h1>配套服务</h1>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, asperiores, perferendis a eveniet ipsa ea deleniti minus ut doloribus minima provident perspiciatis fuga velit pariatur quasi molestias eum molestiae excepturi?
+    <div class="bs-example">
+      <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+        <li class="active"><a href="#hotel" data-toggle="tab">食宿</a></li>
+        <li><a href="#ticket" data-toggle="tab">票务</a></li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="hotel">
+        <ul class="pl_hotellist clearfix">
+            <li class="item">
+              <p class="pic">
+                <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fshadow-inn.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Shadow+Inn" target="_blank">
+                  <img src="http://static.qyer.com/upload/business/base/hotel/e1/16/e11679f1fef0c8fad0a05a786a8f02a7.t.200_133.jpeg" width="200" height="133" alt="">
+                </a>
+              </p>
+              <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fshadow-inn.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Shadow+Inn" target="_blank">Shadow Inn</a></p>
+              <p class="pricelay">
+                <span class="price">
+                  THB 
+                  <em>
+                    130                        </em>
+                  </span>
+                  <span class="arrow"></span>
+                </p>
+                <p class="locate">
+                  靠近
+                  曼谷卧佛寺
+                  <span class="gap">、</span>
+                  曼谷大王宫
+                </p>
+                <div class="info clearfix">
+                  <span class="star">
+                    <img src="http://static.qyer.com/images/place/four/hotel_star.png" alt="">
+                  </span>
+                </div>
+                <p class="btnlay">
+                  <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fshadow-inn.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Shadow+Inn" target="_blank" class="btn">立即预订</a>
+                </p>
+              </li>
+              <li class="item">
+                <p class="pic">
+                  <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fcentaur-inn.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Centaur+Inn" target="_blank">
+                    <img src="http://static.qyer.com/upload/business/base/hotel/fe/d2/fed2e0dce7c6f57e8516cb1d25cd45b8.t.200_133.jpeg" width="200" height="133" alt="">
+                  </a>
+                </p>
+                <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fcentaur-inn.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Centaur+Inn" target="_blank">Centaur Inn</a></p>
+                <p class="pricelay">
+                  <span class="price">
+                    THB 
+                    <em>
+                      130                        </em>
+                    </span>
+                    <span class="arrow"></span>
+                  </p>
+                  <p class="locate">
+                    靠近
+                    湄南河公交船
+                    <span class="gap">、</span>
+                    曼谷华南蓬火车站
+                  </p>
+                  <div class="info clearfix">
+                    <span class="star">
 
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, hic, quod, velit dicta deserunt assumenda earum autem optio ipsam tempore corporis praesentium sapiente officia officiis corrupti ipsa animi veniam quaerat.
+                    </span>
+                  </div>
+                  <p class="btnlay">
+                    <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fcentaur-inn.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Centaur+Inn" target="_blank" class="btn">立即预订</a>
+                  </p>
+                </li>
+                <li class="item">
+                  <p class="pic">
+                    <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fphiman-riverview-guesthouse.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Phiman+Riverview+Guesthouse" target="_blank">
+                      <img src="http://static.qyer.com/upload/business/base/hotel/2a/b5/2ab5bb913367457bc99f73e3868a5d17.t.200_133.jpeg" width="200" height="133" alt="">
+                    </a>
+                  </p>
+                  <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fphiman-riverview-guesthouse.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Phiman+Riverview+Guesthouse" target="_blank">Phiman Riverview Guesthouse</a></p>
+                  <p class="pricelay">
+                    <span class="price">
+                      THB 
+                      <em>
+                        180                        </em>
+                      </span>
+                      <span class="arrow"></span>
+                    </p>
+                    <p class="locate">
+                      靠近
+                      逛考山路
+                      <span class="gap">、</span>
+                      玉佛寺
+                    </p>
+                    <div class="info clearfix">
+                      <span class="star">
+
+                      </span>
+                    </div>
+                    <p class="btnlay">
+                      <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fphiman-riverview-guesthouse.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Phiman+Riverview+Guesthouse" target="_blank" class="btn">立即预订</a>
+                    </p>
+                  </li>
+                  <li class="item">
+                    <p class="pic">
+                      <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Famazing-house.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Amazing+House" target="_blank">
+                        <img src="http://static.qyer.com/upload/business/base/hotel/29/35/293559566d53a9a95904aec5c011c3e7.t.200_133.jpeg" width="200" height="133" alt="">
+                      </a>
+                    </p>
+                    <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Famazing-house.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Amazing+House" target="_blank">Amazing House</a></p>
+                    <p class="pricelay">
+                      <span class="price">
+                        THB 
+                        <em>
+                          220                        </em>
+                        </span>
+                        <span class="arrow"></span>
+                      </p>
+                      <p class="locate">
+                        靠近
+                        逛考山路
+                        <span class="gap">、</span>
+                        玉佛寺
+                      </p>
+                      <div class="info clearfix">
+                        <span class="star">
+                          <img src="http://static.qyer.com/images/place/four/hotel_star.png" alt="">
+                        </span>
+                      </div>
+                      <p class="btnlay">
+                        <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Famazing-house.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Amazing+House" target="_blank" class="btn">立即预订</a>
+                      </p>
+                    </li>
+                    <li class="item">
+                      <p class="pic">
+                        <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fmadee.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Madee+Hostel" target="_blank">
+                          <img src="http://static.qyer.com/upload/business/base/hotel/7f/f8/7ff8e496fc051e589b0c422fcfd5bb82.t.200_133.jpeg" width="200" height="133" alt="">
+                        </a>
+                      </p>
+                      <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fmadee.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Madee+Hostel" target="_blank">Madee Hostel</a></p>
+                      <p class="pricelay">
+                        <span class="price">
+                          THB 
+                          <em>
+                            230                        </em>
+                          </span>
+                          <span class="arrow"></span>
+                        </p>
+                        <p class="locate">
+                          靠近
+                          曼谷大学艺术画廊
+                          <span class="gap">、</span>
+                          曼谷汽车东站
+                        </p>
+                        <div class="info clearfix">
+                          <span class="star">
+
+                          </span>
+                        </div>
+                        <p class="btnlay">
+                          <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fmadee.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Madee+Hostel" target="_blank" class="btn">立即预订</a>
+                        </p>
+                      </li>
+                      <li class="item">
+                        <p class="pic">
+                          <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fde-talak-hostel.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=De+Talak+Hostel" target="_blank">
+                            <img src="http://static.qyer.com/upload/business/base/hotel/9c/1c/9c1c6ff5feef365158b3270a505689c6.t.200_133.jpeg" width="200" height="133" alt="">
+                          </a>
+                        </p>
+                        <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fde-talak-hostel.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=De+Talak+Hostel" target="_blank">De Talak Hostel</a></p>
+                        <p class="pricelay">
+                          <span class="price">
+                            THB 
+                            <em>
+                              238                        </em>
+                            </span>
+                            <span class="arrow"></span>
+                          </p>
+                          <p class="locate">
+                            靠近
+                            安全套餐厅
+                            <span class="gap">、</span>
+                            泰拳竞技场
+                          </p>
+                          <div class="info clearfix">
+                            <span class="star">
+                              <img src="http://static.qyer.com/images/place/four/hotel_star.png" alt=""><img src="http://static.qyer.com/images/place/four/hotel_star.png" alt=""><img src="http://static.qyer.com/images/place/four/hotel_star.png" alt="">
+                            </span>
+                          </div>
+                          <p class="btnlay">
+                            <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fde-talak-hostel.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=De+Talak+Hostel" target="_blank" class="btn">立即预订</a>
+                          </p>
+                        </li>
+                        <li class="item">
+                          <p class="pic">
+                            <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fqueen-suriya-s-castle.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Queen+Suriya%27s+Castle" target="_blank">
+                              <img src="http://static.qyer.com/upload/business/base/hotel/ec/9a/ec9aac1ccf5e125f8dda6bbd67321723.t.200_133.jpeg" width="200" height="133" alt="">
+                            </a>
+                          </p>
+                          <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fqueen-suriya-s-castle.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Queen+Suriya%27s+Castle" target="_blank">Queen Suriya's Castle</a></p>
+                          <p class="pricelay">
+                            <span class="price">
+                              THB 
+                              <em>
+                                250                        </em>
+                              </span>
+                              <span class="arrow"></span>
+                            </p>
+                            <p class="locate">
+                              靠近
+                              逛考山路
+                              <span class="gap">、</span>
+                              玉佛寺
+                            </p>
+                            <div class="info clearfix">
+                              <span class="star">
+                                <img src="http://static.qyer.com/images/place/four/hotel_star.png" alt=""><img src="http://static.qyer.com/images/place/four/hotel_star.png" alt=""><img src="http://static.qyer.com/images/place/four/hotel_star.png" alt="">
+                              </span>
+                            </div>
+                            <p class="btnlay">
+                              <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fqueen-suriya-s-castle.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Queen+Suriya%27s+Castle" target="_blank" class="btn">立即预订</a>
+                            </p>
+                          </li>
+                          <li class="item">
+                            <p class="pic">
+                              <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fthe-urban-age.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=The+Urban+Age" target="_blank">
+                                <img src="http://static.qyer.com/upload/business/base/hotel/b3/41/b34165719d21b59903e0b8786dedf86d.t.200_133.jpeg" width="200" height="133" alt="">
+                              </a>
+                            </p>
+                            <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fthe-urban-age.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=The+Urban+Age" target="_blank">The Urban Age</a></p>
+                            <p class="pricelay">
+                              <span class="price">
+                                THB 
+                                <em>
+                                  280                        </em>
+                                </span>
+                                <span class="arrow"></span>
+                              </p>
+                              <p class="locate">
+                                靠近
+                                曼谷地铁
+                                <span class="gap">、</span>
+                                Super Rich 1965
+                              </p>
+                              <div class="info clearfix">
+                                <span class="star">
+                                  <img src="http://static.qyer.com/images/place/four/hotel_star.png" alt=""><img src="http://static.qyer.com/images/place/four/hotel_star.png" alt="">
+                                </span>
+                              </div>
+                              <p class="btnlay">
+                                <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fthe-urban-age.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=The+Urban+Age" target="_blank" class="btn">立即预订</a>
+                              </p>
+                            </li>
+                            <li class="item">
+                              <p class="pic">
+                                <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fmile-map-hostel.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Mile+Map+Hostel" target="_blank">
+                                  <img src="http://static.qyer.com/upload/business/base/hotel/d2/7a/d27a7076f1f5ac6c784af8ea1ff6a30e.t.200_133.jpeg" width="200" height="133" alt="">
+                                </a>
+                              </p>
+                              <p class="name"><a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fmile-map-hostel.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Mile+Map+Hostel" target="_blank">Mile Map Hostel</a></p>
+                              <p class="pricelay">
+                                <span class="price">
+                                  THB 
+                                  <em>
+                                    295                        </em>
+                                  </span>
+                                  <span class="arrow"></span>
+                                </p>
+                                <p class="locate">
+                                  靠近
+                                  曼谷地铁
+                                  <span class="gap">、</span>
+                                  湄南河公交船
+                                </p>
+                                <div class="info clearfix">
+                                  <span class="star">
+                                    <img src="http://static.qyer.com/images/place/four/hotel_star.png" alt=""><img src="http://static.qyer.com/images/place/four/hotel_star.png" alt="">
+                                  </span>
+                                </div>
+                                <p class="btnlay">
+                                  <a href="http://www.qyer.com/goto.php?url=http%3A%2F%2Fwww.booking.com%2Fhotel%2Fth%2Fmile-map-hostel.html%3Faid%3D355696%26label%3Duid_3139040_guid_7a176d68-5850-4f49-b739-3119bc908530%26checkin_year_month%3D2013-12%26checkin_monthday%3D16%26checkout_year_month%3D2013-12%26checkout_monthday%3D21&amp;hotel_name=Mile+Map+Hostel" target="_blank" class="btn">立即预订</a>
+                                </p>
+                              </li>
+                            </ul>
+        </div>
+        <div class="tab-pane fade" id="ticket">
+          <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="content-main highlight">

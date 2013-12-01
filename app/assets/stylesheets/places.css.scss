@@ -1,3 +1,24 @@
 // Place all the styles related to the places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-main {
+  .photo-main {
+    float: left;
+  }
+}
+
+ul.pl_hotellist {
+  list-style-type: none;
+  padding: 0px;
+
+  li {
+    display: block;
+    float: left;
+    width: 224px;
+    margin: 4px;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    height: 301px;
+  }
+}
