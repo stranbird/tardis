@@ -22,3 +22,69 @@ ul.pl_hotellist {
     height: 301px;
   }
 }
+
+#ticket {
+  .sight_item {
+    margin-bottom: 80px;
+
+    .sight_item_show {
+      float: left;
+      margin-right: 20px;
+      img {
+        min-height: 120px;
+        max-width: 200px;
+        // height: 120px;
+      }
+    }
+
+    .sight_in_tab {
+      clear: both;
+    }
+
+    .sight_in_ticket {
+      clear: both; 
+      .name {
+        width: 400px;
+        margin: 0;
+        float: left;
+        line-height: 40px;
+      }
+
+      .cost_price, .lure_price, .save_price {
+        float: left;
+        line-height: 40px;
+        margin-left: 20px;
+      }
+
+      .do {
+        float: right;
+        line-height: 40px;
+      }
+
+      .strike {
+        text-decoration: line-through;
+      }
+    }
+
+    .sight_item_hot, .sight_in_more {
+      display: none;
+    }
+  }
+}
+
+ul.pla_poilist {
+  padding: 0px;
+
+  li {
+    float: left;
+    list-style: none;
+
+    width: 200px;
+    height: 300px;
+    margin: 15px;
+  }
+}
+
+.clrfix {
+  clear: both;
+}
