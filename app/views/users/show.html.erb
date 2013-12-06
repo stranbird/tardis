@@ -15,7 +15,12 @@
 
   <div class="content-main highlight">
     <h3>游记</h3>   
-    <%= link_to "新游记", new_user_review_path(current_user) %>
+    <%= link_to "新游记", new_user_review_path(current_user) if current_user == @user %>
+    <ul>
+    <% @user.reviews.each do |review| %>
+      <li><%= link_to review.title, review %></li>
+    <% end -%>
+    </ul>
   </div>
 
   <div class="content-main highlight">
