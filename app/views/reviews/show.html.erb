@@ -3,7 +3,7 @@
     <p id="notice"><%= notice %></p>
 
     <h1><%= @review.title %></h1>
-    <h4><%= @review.place || Place.first.name %></h4>
+    <h4><%= @review.try(:place).name %></h4>
 
     <p>
       <%= @review.content %>

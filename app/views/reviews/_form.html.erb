@@ -19,13 +19,13 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </div>
-  <!-- <div class="field">
-    <%#= f.label :place %><br />
-    <%#= f.text_field :place %>
-  </div> -->
+  <div class="field" style="display: none;">
+    <%= f.label :place %><br />
+    <%= f.text_field :place_id, :value => params[:place_id] %>
+  </div>
   <div class="field" style="display: none">
     <%= f.label :user %><br />
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id, :value => params[:user_id] %>
   </div>
   <div class="actions">
     <%= f.submit %>

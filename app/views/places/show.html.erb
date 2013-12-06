@@ -3,10 +3,10 @@
     <p id="notice"></p>
 
     <div class="row">
-      <img alt="P1931122747" class="col-md-5" src="/img/p1931122747.jpg">
+      <%= image_tag @place.pic, class: "col-md-5" %>
 
       <div class="col-md-7">
-        <h2>Bangkok</h2>
+        <h2><%= @place.name %></h2>
         <p>曼谷是泰国首都与最大城市，在当地华人社区亦作泰京，为泰国政治、经济、贸易、交通、文化、科技、教育、与各方面中心。位于昭披耶河东岸，近暹罗湾。</p>
 
         <!-- JiaThis Button BEGIN -->
@@ -26,12 +26,12 @@
     </div>
   </div>
 
-   <div class="content-main highlight">
+   <!-- <div class="content-main highlight">
     <h1>自选助手</h1>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, asperiores, perferendis a eveniet ipsa ea deleniti minus ut doloribus minima provident perspiciatis fuga velit pariatur quasi molestias eum molestiae excepturi?
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, hic, quod, velit dicta deserunt assumenda earum autem optio ipsam tempore corporis praesentium sapiente officia officiis corrupti ipsa animi veniam quaerat.
-  </div>
+  </div> -->
 
 <div class="content-main highlight">
   <h1>配套服务</h1>
@@ -483,6 +483,12 @@ Victory Momument 胜利纪念碑 是一个曼谷市很著名的地标性建筑�
 
 <div class="col-md-4">
   <div class="content-main highlight">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, ab ipsum aut atque nulla voluptatem dicta. Aliquam, id sed rem veritatis asperiores? Magni, ea natus corporis nobis itaque atque sequi.
+    <h4>相关游记</h4>
+    <%= link_to "添加新游记", new_review_path + "?place_id=#{@place.id}&user_id=#{current_user.id}" %>
+    <ul>
+      <% @place.reviews.each do |review| %>
+        <%= link_to review.title, review_path(review) %>
+      <% end -%>
+    </ul>
   </div>
 </div>

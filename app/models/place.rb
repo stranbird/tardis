@@ -5,4 +5,6 @@ class Place < ActiveRecord::Base
 
   include PublicActivity::Model
   tracked :owner => :user
+
+  has_many :reviews
 end
