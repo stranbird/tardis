@@ -42,3 +42,4 @@ gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/s
 gem 'devise'
 
 gem "acts_as_follower", '~> 0.1.1'
+gem 'public_activity'

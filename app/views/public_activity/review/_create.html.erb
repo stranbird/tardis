@@ -1,0 +1,1 @@
+<li><%= link_to a.owner.email, a.owner if a.owner %> created a new <%= link_to_trackable a.trackable, a.trackable_type %><span style="float: right;"><%= time_ago_in_words a.created_at %> 之前</span></li> 
