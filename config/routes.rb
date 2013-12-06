@@ -1,4 +1,6 @@
 Tardis::Application.routes.draw do
+  devise_for :users
+
   resources :users
 
 
@@ -12,6 +14,7 @@ Tardis::Application.routes.draw do
 
   resources :places
 
+  root :to => 'places#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

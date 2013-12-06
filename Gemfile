@@ -39,3 +39,6 @@ gem 'jquery-rails'
 
 
 gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+gem 'devise'
+
+gem "acts_as_follower", '~> 0.1.1'

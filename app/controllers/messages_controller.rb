@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.sender = @user
-    @message.recipient = User.find_by_name(params[:message][:to])
+    @message.recipient = User.find_by_email(params[:message][:to])
 
     if @message.save
       flash[:notice] = "Message sent"
