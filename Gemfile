@@ -52,3 +52,5 @@ gem 'acts_as_votable', '~> 0.8.0'
 gem 'gmaps4rails'
 
 gem 'markable'
+
+gem 'thin'
