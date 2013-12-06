@@ -1,5 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-8">
+  <div class="content-main highlight">
+    <p id="notice"><%= notice %></p>
+
+    <div class="row">
+      <%= image_tag "/img/p1931122747.jpg", class: "col-md-5" %>
+
+      <div class="col-md-7">
+      </div>
+
+    </div>
+  </div>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+  <div class="content-main highlight">
+    
+  </div>
+
+  <div class="content-main highlight">
+    
+  </div>
+
+  <div class="content-main highlight">
+    
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="content-main highlight">
+    <div class="row">
+     <%= image_tag "/img/p1931122747.jpg", class: "col-md-5" %>
+     <%= @user.email %> <br /><br />
+
+     <% if @user != current_user then %>
+      <%= link_to "写信", new_user_message_path(current_user) + "?to=#{@user.id}" %>
+     <% end %>
+
+    </div>
+  </div>
+</div>
