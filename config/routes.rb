@@ -1,7 +1,9 @@
 Tardis::Application.routes.draw do
   opinio_model
 
-  resources :reviews
+  resources :reviews do 
+    opinio
+  end
 
 
   devise_for :users

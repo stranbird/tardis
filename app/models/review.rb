@@ -5,4 +5,6 @@ class Review < ActiveRecord::Base
 
   include PublicActivity::Model
   tracked :owner => :user
+
+  opinio_subjectum
 end
