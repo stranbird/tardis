@@ -3,6 +3,9 @@ Tardis::Application.routes.draw do
 
   resources :reviews do 
     opinio
+    member do
+      get :like, :unlike
+    end
   end
 
 
