@@ -1,0 +1,56 @@
+<div class="col-md-8">
+  <div class="content-main highlight">
+    <p id="notice"><%= notice %></p>
+
+    <h1><%= @review.title %></h1>
+    <h4><%= @review.place || Place.first.name %></h4>
+
+    <p>
+      <%= @review.content %>
+    </p>
+
+
+    <% unless current_user.liked? @review then %>
+      <%= link_to "喜欢", like_review_path(@review) %> 
+    <% else %>
+      <%= link_to "取消喜欢", unlike_review_path(@review) %> 
+    <% end -%>
+    <% if @like_users.size > 0 then %>
+      <%= "被#{@like_users.map(&:email).take(3).join(",")}等#{@like_users.size}个人喜欢。" %>
+    <% end -%> 
+
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+      <a class="jiathis_button_qzone"></a>
+      <a class="jiathis_button_tsina"></a>
+      <a class="jiathis_button_tqq"></a>
+      <a class="jiathis_button_renren"></a>
+      <a class="jiathis_button_kaixin001"></a>
+      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+      <a class="jiathis_counter_style"></a>
+    </div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1384522448771465" charset="utf-8"></script>
+    <!-- JiaThis Button END --> 
+
+    <div class="clrfix"></div>
+  </div>
+
+  <div class="content-main highlight">
+    <%= render_comments @review %>
+    <%= render_comments_form @review %> 
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="content-main highlight">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <b>作者:</b>
+          <%= @review.user.email %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+

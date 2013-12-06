@@ -1,7 +1,19 @@
 Tardis::Application.routes.draw do
+  opinio_model
+
+  resources :reviews do 
+    opinio
+    member do
+      get :like, :unlike
+    end
+  end
+
+
   devise_for :users
 
   resources :users do
+    resources :reviews
+
     member do
       get :follow
       get :unfollow
@@ -10,11 +22,13 @@ Tardis::Application.routes.draw do
 
 
   resources :users do
-     resources :messages do
-       collection do
-         post :delete_selected
-       end
-     end
+    opinio
+
+    resources :messages do
+      collection do
+        post :delete_selected
+      end
+    end
    end
 
   resources :places

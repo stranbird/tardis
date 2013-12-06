@@ -11,13 +11,26 @@
     </div>
   </div>
 
+  <div class="content-main highlight">
+    <h3>时间线</h3>   
+    <%= render_activities(@activities.reverse) %>
+
+  </div>
+
 
 
   <div class="content-main highlight">
-    
+    <h3>游记</h3>   
+    <%= link_to "新游记", new_user_review_path(current_user) if current_user == @user %>
+    <ul>
+    <% @user.reviews.each do |review| %>
+      <li><%= link_to review.title, review %></li>
+    <% end -%>
+    </ul>
   </div>
 
   <div class="content-main highlight">
+    <h3>图片</h3>   
     
   </div>
 
@@ -70,4 +83,15 @@
       </div>
     </div>
   </div>
+
+  <div class="content-main highlight">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>留言板</h4> 
+        <%= render_comments @user %>
+        <%= render_comments_form @user %>
+      </div>
+    </div>
+  </div>
 </div>
+
