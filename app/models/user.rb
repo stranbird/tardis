@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
 
   has_many :reviews
 
+  opinio_subjectum
+
   def name
     email
   end
