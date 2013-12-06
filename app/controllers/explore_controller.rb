@@ -14,9 +14,10 @@ class ExploreController < ApplicationController
     #       "infowindow": "hello!"
     #     }
     #   ]
-    @hash = Gmaps4rails.build_markers([current_user]) do |user, marker|
-      marker.lat 0
-      marker.lng 0
+    @places = Place.where("id > 1")
+    @hash = Gmaps4rails.build_markers(@places) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
       marker.json({:id => user.id })
       marker.picture({
       "url" => "http://img3.douban.com/pics/travel/place-single.png",
