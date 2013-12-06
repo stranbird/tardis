@@ -34,8 +34,40 @@
 
      <% if @user != current_user then %>
       <%= link_to "写信", new_user_message_path(current_user) + "?to=#{@user.id}" %>
+      <% if current_user.following? @user then %>
+        <%= link_to "已关注", :action => "unfollow" %>
+      <% else %>
+        <%= link_to "关注他", :action => "follow" %>
+      <% end %>
      <% end %>
+    </div>
 
+    <div class="row" id="following_tab">
+      <div class="col-md-5">
+        <h4>关注(<%= @user.follow_count %>)</h4>
+        <% if !@user.following_users.blank? %>
+          <ul>
+          <% for item in @user.following_users %>
+            <li><%= link_to item.email, user_path(item) %></li>
+          <% end %>
+          </ul>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row" id="follower_tab">
+      <div class="col-md-5">
+        <h4>粉丝(<%= @user.followers_count %>)</h4>
+        <% if !@user.followers.blank? %>
+          <ul>
+          <% for item in @user.followers %>
+            <li><%= link_to item.email, user_path(item) %></li>
+          <% end %>
+          </ul>
+        <% else %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
