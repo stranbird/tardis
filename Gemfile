@@ -43,3 +43,6 @@ gem 'devise'
 
 gem "acts_as_follower", '~> 0.1.1'
 gem 'public_activity'
+
+gem "opinio"
+gem "kaminari"

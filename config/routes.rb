@@ -1,4 +1,6 @@
 Tardis::Application.routes.draw do
+  opinio_model
+
   resources :reviews
 
 
