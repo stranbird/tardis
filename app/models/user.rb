@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
 
   has_private_messages
 
+  acts_as_followable
+  acts_as_follower
+
   def name
     email
   end
