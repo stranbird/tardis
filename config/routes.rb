@@ -1,4 +1,6 @@
 Tardis::Application.routes.draw do
+  get "explore/index"
+
   opinio_model
 
   resources :reviews do 
