@@ -80,4 +80,15 @@ class PlacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def toggle_visit
+    @place = Place.find(params[:id])
+    unless @place.marked_as_visited? by: current_user then
+      # puts "*" * 20
+      current_user.mark_as_visited @place
+      @place.create_activity key: 'place.visited', owner: current_user
+    else
+      current_user.remove_mark :visited, @place
+    end
+  end
 end

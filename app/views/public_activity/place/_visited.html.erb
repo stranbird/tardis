@@ -1,0 +1,1 @@
+<li><%= link_to a.owner.email, a.owner if a.owner %> 去过 <%= link_to_trackable a.trackable, a.trackable.name %><span style="float: right;"><%= time_ago_in_words a.created_at %> 之前</span></li> 

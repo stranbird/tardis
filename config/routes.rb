@@ -33,7 +33,12 @@ Tardis::Application.routes.draw do
     end
    end
 
-  resources :places
+  resources :places do
+    member do
+      get :toggle_visit
+    end
+  end
+
 
   root :to => 'places#index'
 
