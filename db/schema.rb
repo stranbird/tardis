@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206155926) do
+ActiveRecord::Schema.define(:version => 20131206172120) do
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",                      :null => false
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(:version => 20131206155926) do
     t.datetime "updated_at", :null => false
     t.text     "tips"
   end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "place_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "reviews", ["place_id"], :name => "index_reviews_on_place_id"
+  add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

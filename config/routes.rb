@@ -1,7 +1,12 @@
 Tardis::Application.routes.draw do
+  resources :reviews
+
+
   devise_for :users
 
   resources :users do
+    resources :reviews
+
     member do
       get :follow
       get :unfollow
