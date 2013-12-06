@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 
 gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+gem 'devise'
