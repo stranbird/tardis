@@ -35,7 +35,15 @@
   </div>
 
   <div class="content-main highlight">
-    
+    <h3>去过的地方</h3>
+    <% @user.visited_places.each do |place| %>
+      <div class="visted-place" style="float: left; margin-right: 10px;">
+        <%= image_tag place.pic, :size => "170x170" %><br />
+        <%= link_to place.name, place_path(place), :style => "width: 170px; text-align: center; display: block" %>
+      </div>
+    <% end -%>
+
+    <div class="clrfix"></div>
   </div>
 </div>
 

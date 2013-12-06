@@ -1,0 +1,3 @@
+$("#place-id-<%= @place.id %>").parent().html("<%= escape_javascript render :partial => 'users/my_template', :locals => { :object => @place } %>");
+
+// console.log("<%= escape_javascript render :partial => 'users/my_template', :locals => { :object => @place } %>");

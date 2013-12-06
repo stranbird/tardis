@@ -1,3 +1,14 @@
-<h3><%= object.name %></h3>
-<img src="<%= object.pic %>" alt="">
+<div class="info" id="place-id-<%= object.id %>">
+  
+  <h3><%= object.name %></h3>
+  <img src="<%= object.pic %>" alt="">
 
+
+  <% unless object.marked_as_visited? :by => current_user then %>
+    <%= link_to "标记去过", toggle_visit_place_path(object), :remote => true %> 
+  <% else %>
+    <%= link_to "已去过", toggle_visit_place_path(object), :remote => true %> 
+  <% end -%>
+
+
+</div>

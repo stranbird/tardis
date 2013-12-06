@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   opinio_subjectum
 
+  acts_as_marker
+
   def name
     email
   end
