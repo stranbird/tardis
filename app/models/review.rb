@@ -7,4 +7,6 @@ class Review < ActiveRecord::Base
   tracked :owner => :user
 
   opinio_subjectum
+
+  acts_as_votable
 end

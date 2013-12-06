@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/1.json
   def show
     @review = Review.find(params[:id])
+    @like_users = User.where(:id => @review.likes.map(&:voter_id))
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,5 +81,21 @@ class ReviewsController < ApplicationController
       format.html { redirect_to reviews_url }
       format.json { head :no_content }
     end
+  end
+
+  def like
+    @review = Review.find(params[:id])
+    @review.liked_by current_user
+
+    @review.create_activity key: 'review.like', owner: current_user
+
+    redirect_to :back
+  end
+
+  def unlike
+    @review = Review.find(params[:id])
+    @review.unliked_by current_user
+
+    redirect_to :back
   end
 end

@@ -46,3 +46,5 @@ gem 'public_activity'
 
 gem "opinio"
 gem "kaminari"
+
+gem 'acts_as_votable', '~> 0.8.0'
