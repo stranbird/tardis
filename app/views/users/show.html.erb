@@ -13,7 +13,7 @@
 
   <div class="content-main highlight">
     <h3>时间线</h3>   
-    <%= render_activities(@activities) %>
+    <%= render_activities(@activities.reverse) %>
 
   </div>
 
@@ -83,4 +83,15 @@
       </div>
     </div>
   </div>
+
+  <div class="content-main highlight">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>留言板</h4> 
+        <%= render_comments @user %>
+        <%= render_comments_form @user %>
+      </div>
+    </div>
+  </div>
 </div>
+
