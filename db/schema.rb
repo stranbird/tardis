@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131206212136) do
+ActiveRecord::Schema.define(:version => 20131207000623) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -78,12 +78,14 @@ ActiveRecord::Schema.define(:version => 20131206212136) do
 
   create_table "places", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.text     "tips"
     t.string   "pic"
     t.string   "latitude"
     t.string   "longitude"
+    t.string   "category"
+    t.string   "description"
   end
 
   create_table "reviews", :force => true do |t|

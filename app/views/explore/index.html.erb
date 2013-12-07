@@ -11,10 +11,76 @@
 
 
 <script type="text/javascript">
-  handler = Gmaps.build('Google');
+  this.handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
   });
+
+  var markersArray = [];
+
+  // handler.map.callback = function() {
+  //   alert("2");
+    // var marker = handler.map.markers[0];
+    // if (marker) {
+    //   // Move existing marker when editing a previously stored location
+    //   google.maps.event.addListener(marker.serviceObject, 'dragend', function() {
+    //     updateFormLocation(this.getPosition());
+    //   });
+    // }
+
+    // // On click, clear markers, place a new one, update coordinates in the form
+  google.maps.event.addListener(handler.map.serviceObject, 'click', function(event) {
+    // clearOverlays();
+    placeMarker(event.latLng);
+    updateFormLocation(event.latLng);
+  });
+  // };
+  // Update form attributes with given coordinates
+  function updateFormLocation(latLng) {
+    $('#centre_latitude').val(latLng.lat());
+    $('#centre_longitude').val(latLng.lng());
+    $('#centre_gmaps_zoom').val(handler.map.serviceObject.getZoom());
+  }
+  // Add a marker with an open infowindow
+  function placeMarker(latLng) {
+    var marker = new google.maps.Marker({
+      position: latLng, 
+      map: handler.map.serviceObject,
+      draggable: true,
+      icon: "http://img3.douban.com/pics/travel/place-single.png"
+    });
+
+    h = '<%= escape_javascript render :partial => "places/m_form" %>';
+    h = $(h).find("#place_longitude").attr("value", latLng.lng()).end().find("#place_latitude").attr("value", latLng.lat()).end()[0].outerHTML;
+
+    alert(h);
+
+    markersArray.push(marker);
+    // Set and open infowindow
+    var infowindow = new google.maps.InfoWindow({
+      content: h
+    });
+    infowindow.open(handler.map.serviceObject, marker);
+    
+    // $("#place_latitude");
+
+    // alert($("#place_latitude").val());
+    // Listen to drag & drop
+    google.maps.event.addListener(marker, 'dragend', function() {
+      updateFormLocation(this.getPosition());
+    });
+  }
+  // Removes the overlays from the map, including the ones loaded with the map itself
+  function clearOverlays() {
+    for (var i = 0; i < markersArray.length; i++ ) {
+      markersArray[i].setMap(null);
+    }
+    markersArray.length = 0;
+
+    for (var i = 0; i < handler.map.markers.length; i++ ) {
+      handler.map.clearMarker(handler.map.markers[i]);
+    }
+  }
 </script>

@@ -1,0 +1,43 @@
+<% @place = Place.new %>
+<%= form_for(@place) do |f| %>
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @place.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "名称" %><br />
+    <%= f.text_field :name  %>
+  </div>
+
+  <div class="field" style="display: none;">
+    <%= f.text_field :longitude  %>
+    <%= f.text_field :latitude  %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :category, "类型" %><br />
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "简介" %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pic, "图片" %><br />
+    <%= f.text_field :pic %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交新的兴趣点" %>
+  </div>
+<% end %>

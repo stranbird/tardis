@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :longitude, :latitude, :category, :description, :pic
+  belongs_to :user
 
   markable_as :visited
 
