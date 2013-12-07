@@ -55,8 +55,6 @@
     h = '<%= escape_javascript render :partial => "places/m_form" %>';
     h = $(h).find("#place_longitude").attr("value", latLng.lng()).end().find("#place_latitude").attr("value", latLng.lat()).end()[0].outerHTML;
 
-    alert(h);
-
     markersArray.push(marker);
     // Set and open infowindow
     var infowindow = new google.maps.InfoWindow({
