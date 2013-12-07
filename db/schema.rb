@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131207004550) do
+ActiveRecord::Schema.define(:version => 20131207012106) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20131207004550) do
     t.string   "description"
     t.text     "ticket_html"
     t.text     "hotel_html"
+    t.text     "map_html"
   end
 
   create_table "reviews", :force => true do |t|
