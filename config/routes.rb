@@ -40,7 +40,7 @@ Tardis::Application.routes.draw do
   end
 
 
-  root :to => 'places#index'
+  root :to => 'explore#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,19 +2,7 @@
 
 class ExploreController < ApplicationController
   def index
-    # [
-    #     {
-    #       "lat": 0,
-    #       "lng": 0,
-    #       "picture": {
-    #         "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-    #         "width":  36,
-    #         "height": 36
-    #       },
-    #       "infowindow": "hello!"
-    #     }
-    #   ]
-    @places = Place.where("id > 1")
+    @places = Place.all
     @hash = Gmaps4rails.build_markers(@places) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
