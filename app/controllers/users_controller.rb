@@ -86,14 +86,20 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     current_user.follow(@user)
 
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js { render "update_follow" }
+    end
   end
 
   def unfollow
     @user = User.find(params[:id])
     current_user.stop_following(@user)
 
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.js { render "update_follow" }
+    end
   end
 
   def friends

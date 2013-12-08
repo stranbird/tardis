@@ -29,4 +29,13 @@ module ApplicationHelper
     count > 0 ? count : nil
     # "被#{@like_users.map(&:email).take(3).join(",")}等#{@like_users.size}个人喜欢。"  if @like_users.size > 0   
   end
+
+  def follow_button(u, v)
+    return if u == v
+    unless u.following? v 
+      button_to "关注他", follow_user_path(v), :remote => true, class: "btn btn-success btn-xs" 
+    else 
+      button_to "已经关注", unfollow_user_path(v), :remote => true, class: "btn btn-default btn-xs" 
+    end
+  end
 end

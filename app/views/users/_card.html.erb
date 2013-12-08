@@ -1,4 +1,4 @@
-<div class="user-card">
+<div class="user-card" id="user-card-<%= user.id %>">
   <%= link_to user, class: "link-wrapper" do %>
     <%= image_tag user.avatar, class: "avatar" %>
   <% end -%>
@@ -10,6 +10,10 @@
     <div class="actions">
       <button class="btn btn-primary btn-xs">留言</button>
       <button class="btn btn-primary btn-xs" data-toggle="modal" href="<%= new_user_message_path(current_user) + "?to=#{user.id}" %>" data-target="#myModal">站内信</button>
+
+      <%= follow_button current_user, user %>
+
+
     </div>
   </div>
     
