@@ -213,7 +213,7 @@ Victory Momument 胜利纪念碑 是一个曼谷市很著名的地标性建筑�
 <div class="col-md-4">
   <div class="content-main highlight">
     <h4>相关游记</h4>
-    <%= link_to "添加新游记", new_review_path + "?place_id=#{@place.id}&user_id=#{current_user.id}" %>
+    <%= link_to "添加新游记", new_review_path + "?place_id=#{@place.id}&user_id=#{current_user.id}" if current_user %>
     <ul>
       <% @place.reviews.each do |review| %>
         <%= link_to review.title, review_path(review) %>
