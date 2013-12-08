@@ -1,3 +1,43 @@
-<%= debug @vistied_places %>
-<%= debug @recommand_places %>
-<%= debug @added_places %>
+<%#= debug @vistied_places %>
+<%#= debug @suggest_places %>
+<%#= debug @added_places %>
+
+<div class="col-md-12">
+  <div class="content-main highlight">
+
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+      <li class="active"><a href="#suggestion" data-toggle="tab">推荐景点</a></li>
+      <li>
+        <a href="#vistied_places" data-toggle="tab">
+          <span class="badge pull-right"><%= @vistied_places.count %></span>
+          去过的景点
+        </a>
+      </li>
+      <li><a href="#added_places" data-toggle="tab"><span class="badge pull-right"><%= @added_places.count %></span>我添加的景点</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="suggestion">
+        <div class="row">
+          <%= render partial: "places/card", collection: @suggest_places, as: "place", locals: { use_grid: true } %>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="vistied_places">
+        <div class="row">
+        <%= render partial: "places/card", collection: @vistied_places, as: "place", locals: { use_grid: true } %>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="added_places">
+        <!-- <div class="row"> -->
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.location = '<%= explore_index_path %>' ">添加新地点</button>
+        <!-- </div> -->
+        <div class="row">
+        <%= render partial: "places/card", collection: @added_places, as: "place", locals: { use_grid: true } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

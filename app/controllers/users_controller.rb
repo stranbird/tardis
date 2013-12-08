@@ -108,7 +108,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @vistied_places = @user.visited_places
-    @recommand_places = [Place.all - @visited_places.to_a].sample(3)
+    @suggest_places = (Place.all - @visited_places.to_a).sample(6)
     @added_places = @user.added_places
   end
 end

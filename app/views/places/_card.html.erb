@@ -1,27 +1,11 @@
-<div class="place-info-detail-box">
-    <ul class="list-unstyled">
-        <li>
-            <span class="place-info-label">名称</span>
-            <div class="place-info-value place-info-name">理解「十年后」以及人生</div>
-        </li>
-        <li>
-            <span class="place-info-label">描述</span>
-            <div class="place-info-value place-info-desc">关注自我的状态，关注内心，把现有这个状态的你当作最终的你，而不把外在的干扰当作敌人，因为现在的你具有的一切就已经是所有过去的结果了。</div>
-        </li>
-        <li>
-            <span class="place-info-label">时点</span>
-            <div class="place-info-value place-info-deadline">2013-12</div>
-        </li>
-        <li>
-            <span class="place-info-label">隐私</span>
-            <div class="place-info-value place-info-status">私有</div>
-        </li>
-    </ul>
-    <div class="place-info-actions ty-dropdown">
-        <i class="icon icon-dropdown-big"></i>
-        <ul class="list-unstyled">
-            <li class="option place-info-edit"><i class="icon icon-edit-d"></i>编辑信息</li>
-            <li class="option place-info-delete"><i class="icon icon-trash"></i>删除梦想</li>
-        </ul>
+<% use_grid ||= false %>
+<%= raw '<div class="col-sm-6 col-md-3">' if use_grid %>
+<%= link_to place, class: "place-card thumbnail" do %>
+    <div class="item-hd">
+        <%= image_tag place.pic %>
     </div>
-</div>
+    <div class="item-bt">
+        <div class="caption"><%= place.name %></div>
+    </div>
+<% end -%>
+<%= raw '</div>' if use_grid %>
