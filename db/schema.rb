@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131207012106) do
+ActiveRecord::Schema.define(:version => 20131208054824) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -117,6 +117,10 @@ ActiveRecord::Schema.define(:version => 20131207012106) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
