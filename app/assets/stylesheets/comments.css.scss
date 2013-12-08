@@ -1,16 +1,22 @@
 .comment-pub {
   margin-top: 30px;
-  .photo {
+  .photo-wrapper {
+    width: 15%;
     display: inline-block;
-    width: 60px;
-    height: 60px;
-    vertical-align: top;
-    margin-right: 30px;
+
+    .photo {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      vertical-align: top;
+      // margin-right: 30px;
+    }
   }
+  
 
   .reply-input {
     display: inline-block;
-    width: 470px;
+    width: 84%;
     vertical-align: top;
   }
 

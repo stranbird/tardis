@@ -1,5 +1,7 @@
 <%= form_for Comment.new, html: {:class => "comment-pub", :remote => false}  do |f| %>
+    <div class="photo-wrapper">
       <%= image_tag current_user.avatar, size: "60x60", class: "photo" %>
+    </div>
 
 
     <div class="reply-input">

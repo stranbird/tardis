@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+
+opinio:
+  messages:
+    comment_sent: "成功发布评论！"

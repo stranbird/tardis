@@ -31,3 +31,8 @@ body {
   border: 1px solid #e1e1e8;
   /*border-radius: 4px;*/
 }
+
+#notice {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
