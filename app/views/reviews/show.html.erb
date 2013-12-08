@@ -4,7 +4,6 @@
 
     <h1><%= @review.title %></h1>
     <em><%= printDate(@review) %></em>
-    <h4><%= @review.place.name if @review.place%></h4>
 
     <div>
       <%= simple_format @review.content %>
@@ -53,10 +52,36 @@
       <div class="col-md-12">
         <p>
           <b>作者:</b>
-          <%= @review.user.try(:email) %>
+          <%= debug @review.user %>
         </p>
       </div>
     </div>
   </div>
-</div>
 
+
+
+  <div class="content-main highlight">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <b>目的地</b>
+          <%= debug @review.place %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="content-main highlight">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          <b>相关游记</b>
+          <%= @review.user.try(:name) %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>

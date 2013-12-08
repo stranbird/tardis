@@ -21,7 +21,4 @@ class User < ActiveRecord::Base
 
   acts_as_marker
 
-  def name
-    email
-  end
 end
