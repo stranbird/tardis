@@ -82,13 +82,17 @@ class PlacesController < ApplicationController
   end
 
   def toggle_visit
-    @place = Place.find(params[:id])
-    unless @place.marked_as_visited? by: current_user then
-      # puts "*" * 20
-      current_user.mark_as_visited @place
-      @place.create_activity key: 'place.visited', owner: current_user
+    if current_user then
+      @place = Place.find(params[:id])
+      unless @place.marked_as_visited? by: current_user then
+        # puts "*" * 20
+        current_user.mark_as_visited @place
+        @place.create_activity key: 'place.visited', owner: current_user
+      else
+        current_user.remove_mark :visited, @place
+      end
     else
-      current_user.remove_mark :visited, @place
+      render :js => "window.location = '#{new_user_session_path}'"
     end
   end
 end
