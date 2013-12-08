@@ -10,4 +10,8 @@ module ApplicationHelper
       "a #{object_type.downcase} which does not exist anymore"
     end
   end
+
+  def printDate(o)
+    o.created_at.to_formatted_s(:shorts)
+  end
 end

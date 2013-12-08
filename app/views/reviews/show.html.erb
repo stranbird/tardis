@@ -3,11 +3,27 @@
     <p id="notice"><%= notice %></p>
 
     <h1><%= @review.title %></h1>
-    <h4><%= @review.try(:place).name %></h4>
+    <em><%= printDate(@review) %></em>
+    <h4><%= @review.place.name if @review.place%></h4>
 
-    <p>
-      <%= @review.content %>
-    </p>
+    <div>
+      <%= simple_format @review.content %>
+    </div>
+
+    <div class="share">
+      <span id="like-article"><i class="icon icon-like"></i><span id="like-num">2</span></span>
+      <!-- <span id="add-resource"><i class="icon icon-share-local"></i><span id="share-num">0</span></span> -->
+      <span class="webshare-icon-button"><i class="icon icon-webshare"></i>
+        <ul class="list-unstyled">
+          <li>
+            <a class="bds_tsina" target="_blank" href=""><i class="icon icon-sina"></i>新浪微博</a>
+          </li>
+          <li>
+            <a class="bds_renren" target="_blank" href=""><i class="icon icon-renren"></i>人人</a>
+          </li>
+        </ul>
+      </span>
+    </div>
 
 
     <% unless current_user.liked? @review then %>
@@ -47,7 +63,7 @@
       <div class="col-md-12">
         <p>
           <b>作者:</b>
-          <%= @review.user.email %>
+          <%= @review.user.try(:email) %>
         </p>
       </div>
     </div>
