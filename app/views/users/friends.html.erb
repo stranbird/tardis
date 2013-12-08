@@ -3,8 +3,13 @@
 
     <ul class="nav nav-tabs" style="margin-bottom: 15px;">
       <li class="active"><a href="#suggestion" data-toggle="tab">推荐关注</a></li>
-      <li><a href="#followings" data-toggle="tab">关注(<%= @followings.count %>)</a></li>
-      <li><a href="#followers" data-toggle="tab">粉丝(<%= @followers.count %>)</a></li>
+      <li>
+        <a href="#followings" data-toggle="tab">
+          <span class="badge pull-right"><%= @followings.count %></span>
+          关注
+        </a>
+      </li>
+      <li><a href="#followers" data-toggle="tab"><span class="badge pull-right"><%= @followers.count %></span>粉丝</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
       <div class="tab-pane fade active in" id="suggestion">
