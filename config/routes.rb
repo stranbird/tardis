@@ -21,6 +21,7 @@ Tardis::Application.routes.draw do
       get :unfollow
 
       get :friends
+      get :places
     end
   end
 

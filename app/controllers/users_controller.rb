@@ -103,4 +103,12 @@ class UsersController < ApplicationController
     @followers = @user.followers
     @suggestions = User.all - @followings - [@user]
   end
+
+  def places
+    @user = User.find(params[:id])
+
+    @vistied_places = @user.visited_places
+    @recommand_places = [Place.all - @visited_places.to_a].sample(3)
+    @added_places = @user.added_places
+  end
 end

@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
 
   acts_as_marker
 
+  has_many :places
+
+  alias_method :added_places, :places
+
   def latest_activity
     PublicActivity::Activity.where(:owner_id => id).order(:id).last
   end
