@@ -54,3 +54,5 @@ gem 'gmaps4rails'
 gem 'markable'
 
 gem 'thin'
+
+gem "font-awesome-rails"

@@ -1,5 +1,5 @@
 <% reply = defined?(reply) ? reply : false %>
-<li id="comment_<%= comment.id %>">
+<!-- <li id="comment_<%= comment.id %>">
   <span><%= comment.owner.email %>说</span> <%= simple_format(comment.body) %>
   <%= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true if comment.owner == current_user %>
   <%# this enables only 1 level of replies %>
@@ -9,4 +9,13 @@
       <%= render :partial => "opinio/comments/comment", :collection => comment.comments, :locals => {:reply => true} %>
     </ul>
   <% end %>
-</li>
+</li> -->
+
+
+<div>
+  <div class="photo" photo-str="text:飞;color:#fff;background-color:#27011b" style="color: rgb(255, 255, 255); background-color: rgb(39, 1, 27); text-align: center; line-height: 60px; font-size: 52px;">飞</div><div class="reply-info">
+    <div class="top-line"><%= link_to comment.owner.name, user_path(comment.owner), class: "reply-author ty-link" %><span class="reply-time"><%= printDate(comment) %></span></div>
+    <div class="reply-text"><%= simple_format(comment.body) %></div>
+    <!-- <div class="reply-to-button-wrap"><span class="reply-to-button"><a class="reply-link" href="javascript:void(0)" reply-to="海皮飞" userid="-1">回复</a></span></div> -->
+  </div>
+</div>

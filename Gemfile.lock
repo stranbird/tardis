@@ -57,6 +57,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    font-awesome-rails (4.0.3.0)
+      railties (>= 3.2, < 5.0)
     gmaps4rails (2.1.1)
     hike (1.2.3)
     i18n (0.6.1)
@@ -148,6 +150,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.8.0)
   coffee-rails (~> 3.2.1)
   devise
+  font-awesome-rails
   gmaps4rails
   jquery-rails
   kaminari

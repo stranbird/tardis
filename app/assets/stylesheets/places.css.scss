@@ -91,4 +91,28 @@ ul.pla_poilist {
 
 .share {
   background-color: #f5f5f5;
+  padding: 7px;
+
+  #like-article {
+    .liked {
+      color: #FA3E74;
+      margin-right: 5px;
+    }
+  }
+
+  .webshare-icon-button {
+    margin-left: 50px;
+
+    .list-unstyled {
+      display: none;
+    }
+
+    &:hover {
+      .list-unstyled {
+        // display: run-in;
+      }
+    }
+  }
+
+
 }

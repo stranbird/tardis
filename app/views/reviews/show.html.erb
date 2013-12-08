@@ -11,9 +11,22 @@
     </div>
 
     <div class="share">
-      <span id="like-article"><i class="icon icon-like"></i><span id="like-num">2</span></span>
+      <span id="like-article"><%= i_like(current_user, @review) %><span id="like-num"><%= n_like(@review) %></span></span>
       <!-- <span id="add-resource"><i class="icon icon-share-local"></i><span id="share-num">0</span></span> -->
-      <span class="webshare-icon-button"><i class="icon icon-webshare"></i>
+
+      <!-- JiaThis Button BEGIN
+      <div class="jiathis_style">
+        <a class="jiathis_button_qzone"></a>
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_tqq"></a>
+        <a class="jiathis_button_renren"></a>
+        <a class="jiathis_button_kaixin001"></a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        <a class="jiathis_counter_style"></a>
+      </div>
+      <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1384522448771465" charset="utf-8"></script>
+      JiaThis Button END --> 
+      <span class="webshare-icon-button"><%= fa_icon "share-square-o" %>
         <ul class="list-unstyled">
           <li>
             <a class="bds_tsina" target="_blank" href=""><i class="icon icon-sina"></i>新浪微博</a>
@@ -25,33 +38,10 @@
       </span>
     </div>
 
-
-    <% unless current_user.liked? @review then %>
-      <%= link_to "喜欢", like_review_path(@review) %> 
-    <% else %>
-      <%= link_to "取消喜欢", unlike_review_path(@review) %> 
-    <% end -%>
-    <% if @like_users.size > 0 then %>
-      <%= "被#{@like_users.map(&:email).take(3).join(",")}等#{@like_users.size}个人喜欢。" %>
-    <% end -%> 
-
-    <!-- JiaThis Button BEGIN -->
-    <div class="jiathis_style">
-      <a class="jiathis_button_qzone"></a>
-      <a class="jiathis_button_tsina"></a>
-      <a class="jiathis_button_tqq"></a>
-      <a class="jiathis_button_renren"></a>
-      <a class="jiathis_button_kaixin001"></a>
-      <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-      <a class="jiathis_counter_style"></a>
-    </div>
-    <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1384522448771465" charset="utf-8"></script>
-    <!-- JiaThis Button END --> 
-
-    <div class="clrfix"></div>
+    <!-- <div class="clrfix"></div>
   </div>
 
-  <div class="content-main highlight">
+  <div class="content-main highlight"> -->
     <%= render_comments @review %>
     <%= render_comments_form @review %> 
   </div>
