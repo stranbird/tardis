@@ -61,3 +61,70 @@
     border: 0;
   }
 }
+
+.timeline {
+
+  .media {
+    overflow: visible;
+  }
+
+  .media-body {
+    border: 1px solid #c9c9c9;
+    color: #888;
+    font-size: 13px;
+    border-radius: 2px;
+    position: relative;
+
+    -webkit-box-shadow: 1px 1px 1px #aaa;
+    -moz-box-shadow: 1px 1px 1px #aaa;
+    box-shadow: 1px 1px 1px #aaa;
+
+    &:hover {
+      -webkit-box-shadow: 2px 2px 2px #aaa;
+      -moz-box-shadow: 2px 2px 2px #aaa;
+      box-shadow: 2px 2px 2px #aaa;
+    }
+
+    padding: 8px;
+    padding-bottom: 40px;
+
+    .bt {
+      background-color: #f7f7f7;
+      height: 22px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid #ddd;
+
+      .time {
+        margin-left: 20px;
+      }
+
+      .like-article, .comments-article {
+        margin-right: 30px;
+        .fa {
+          margin-right: 10px;
+        }
+      }
+    }   
+  }
+}
+
+.comment-board {
+  #comments {
+    .reply-info {
+      width: 190px;
+    }
+  }
+
+  #new_comment {
+    .photo-wrapper {
+      width: inherit;
+    }
+
+    .reply-input {
+      width: 199px;
+    }
+  }
+}

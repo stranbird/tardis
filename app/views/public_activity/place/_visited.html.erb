@@ -1,1 +1,22 @@
-<li><%= link_to a.owner.email, a.owner if a.owner %> 去过 <%= link_to_trackable a.trackable, a.trackable.name %><span style="float: right;"><%= time_ago_in_words a.created_at %> 之前</span></li> 
+<% user = User.find(a.owner_id) %>
+<% place = a.trackable %>
+
+<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag user.avatar, size: "64x64" %>
+  </a>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <%= link_to user.name || user.email %> 去过「<%= link_to_trackable place, place.name  %>」
+    </h5>
+    <%= render partial: "places/card", locals: { place: place } %>
+    <div class="bt">
+      <span class="time"><%= printDate(a) %></span>
+
+      <div class="pull-right">
+        <%= render partial: "public_activity/like_i", locals: { likable: place } %>
+        <%= render partial: "public_activity/comment_i", locals: { commentable: place } %>  
+      </div>
+    </div>
+  </div>
+</div>

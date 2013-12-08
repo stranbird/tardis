@@ -1,0 +1,23 @@
+<% user = User.find(a.owner_id) %>
+<% place = a.trackable %>
+
+<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag user.avatar, size: "64x64" %>
+  </a>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <%= link_to user.name || user.email %> 添加了「<%= link_to_trackable a, a.name  %>」
+    </h5>
+    
+    <%= render partial: "places/card", locals: { place: place } %>
+    <div class="bt">
+      <span class="time"><%= printDate(a) %></span>
+
+      <div class="pull-right">
+        <%= render partial: "public_activity/like_i", locals: { likable: place } %>
+        <%= render partial: "public_activity/comment_i", locals: { commentable: place } %>  
+      </div>
+    </div>
+  </div>
+</div>
