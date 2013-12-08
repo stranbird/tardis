@@ -1,5 +1,6 @@
 <%= form_for Comment.new, html: {:class => "comment-pub", :remote => false}  do |f| %>
-    <div class="photo" photo-str="text:飞;color:#fff;background-color:#27011b" style="color: rgb(255, 255, 255); background-color: rgb(39, 1, 27); text-align: center; line-height: 60px; font-size: 52px;">飞</div>
+      <%= image_tag current_user.avatar, size: "60x60", class: "photo" %>
+
 
     <div class="reply-input">
       <%= f.text_area :body, id: "reply-text", placeholder: "分享你的看法！", class: "form-control", rows: 3    %>
