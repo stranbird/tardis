@@ -1,21 +1,38 @@
-<%= form_for @message, :url => user_messages_path(@user) do |f| %>
-  <p>
-    To:<br />
-    <%#= f.text_field :to %>
-    <%= f.text_field :to, value: User.find(params[:to]).email %>
-    <%#= error_message_on @message, :to %>
-  </p>
-  <p>
-    Subject:<br />
-    <%= f.text_field :subject %>
-    <%#= error_message_on @message, :subject %>
-    </p>
-    <p>
-      Message<br />
-      <%= f.text_area :body %>
-      <%#= error_message_on @message, :body %>
-    </p>
-    <p>
-      <%= submit_tag "Send" %>
-    </p>
-<% end %>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title" id="myModalLabel">写站内信</h4>
+    </div>
+    
+    <%= form_for @message, :url => user_messages_path(current_user), remote: true do |f| %>
+      <div class="modal-body">  
+        
+        <div class="form-group">
+          <b>收件人： <%= @user.name %></b>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :to, value: @user.email, hidden: true %>  
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :subject, "主题" %>
+          <%= f.text_field :subject, class: "form-control" %>
+          <%#= error_message_on @message, :subject %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :body, "内容" %>
+          <%= f.text_area :body, rows: 3, class: "form-control" %>
+          <%#= error_message_on @message, :body %>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <%= submit_tag "发送", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->

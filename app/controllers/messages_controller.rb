@@ -16,7 +16,9 @@ class MessagesController < ApplicationController
   end
   
   def new
+    @user = User.find(params[:to]) if params[:to]
     @message = Message.new
+    @message.to = @user
 
     if params[:reply_to]
       @reply_to = @user.received_messages.find(params[:reply_to])
@@ -25,6 +27,11 @@ class MessagesController < ApplicationController
         @message.subject = "Re: #{@reply_to.subject}"
         @message.body = "\n\n*Original message*\n\n #{@reply_to.body}"
       end
+    end
+
+    if request.xhr? then
+      render layout: nil
+      return
     end
   end
   
@@ -35,7 +42,12 @@ class MessagesController < ApplicationController
 
     if @message.save
       flash[:notice] = "Message sent"
-      redirect_to user_messages_path(@user)
+      
+      if request.xhr? then
+        render :js => "$(\"#myModal\").modal('hide');"
+      else
+        redirect_to user_messages_path(@user)
+      end  
     else
       render :action => :new
     end

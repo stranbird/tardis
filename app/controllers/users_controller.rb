@@ -95,4 +95,12 @@ class UsersController < ApplicationController
 
     redirect_to @user
   end
+
+  def friends
+    @user = User.find(params[:id])    
+
+    @followings = @user.following_by_type "User"
+    @followers = @user.followers
+    @suggestions = User.all - @followings - [@user]
+  end
 end

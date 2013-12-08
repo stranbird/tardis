@@ -1,0 +1,36 @@
+<div class="col-md-12">
+  <div class="content-main highlight">
+
+    <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+      <li class="active"><a href="#suggestion" data-toggle="tab">推荐关注</a></li>
+      <li><a href="#followings" data-toggle="tab">关注(<%= @followings.count %>)</a></li>
+      <li><a href="#followers" data-toggle="tab">粉丝(<%= @followers.count %>)</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="suggestion">
+        <%= render partial: "card", collection: @suggestions, as: "user" %>
+      </div>
+
+      <div class="tab-pane fade" id="followers">
+        <%= render partial: "card", collection: @followers, as: "user" %>
+      </div>
+
+      <div class="tab-pane fade" id="followings">
+        <%= render partial: "card", collection: @followings, as: "user" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div><!-- /.modal -->
+
+<script>
+  $('#myModal').on('hidden.bs.modal', function (e) {
+    // do something...
+    // console.log(this);
+    $(this).removeData();
+  });
+</script>

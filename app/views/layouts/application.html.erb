@@ -23,7 +23,7 @@
           <ul class="nav navbar-nav">
             <li class="explore"><%= link_to "发现目的地", explore_index_path %></li>
             <li><a href="#self-service">自游</a></li>
-            <li><a href="#social">社交</a></li>
+            <li><%= link_to "社交", friends_user_path(current_user) %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
