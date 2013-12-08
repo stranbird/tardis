@@ -1,1 +1,24 @@
-<li><%= link_to a.owner.email, a.owner if a.owner %> 发表了 <%= link_to_trackable a.trackable, a.trackable_type %><span style="float: right;"><%= time_ago_in_words a.created_at %> 之前</span></li> 
+<% user = User.find(a.owner_id) %>
+<% review = a.trackable %>
+<% place = review.place %>
+
+<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag user.avatar, size: "64x64" %>
+  </a>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <%= link_to user.name || user.email %> 发表了「<%= link_to_place review.place  %>」的游记「<%= link_to review.title, review %>」
+    </h5>
+    <%= truncate review.content %>
+    <div class="bt">
+      <span class="time"><%= printDate(a) %></span>
+
+      <div class="pull-right">
+        <%= render partial: "public_activity/like_i", locals: { likable: review } %>
+        <%= render partial: "public_activity/comment_i", locals: { commentable: review } %>  
+      </div>
+      
+    </div>
+  </div>
+</div>

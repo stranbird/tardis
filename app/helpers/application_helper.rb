@@ -13,7 +13,7 @@ module ApplicationHelper
   end
 
   def printDate(o)
-    o.created_at.to_formatted_s(:shorts)
+    o.created_at.to_formatted_s(:shorts).gsub("UTC ", "")
   end
 
   def i_like(u, o)
@@ -22,6 +22,8 @@ module ApplicationHelper
     else 
        link_to unlike_review_path(o) do fa_icon "thumbs-o-up", class: "liked" end
     end 
+  rescue
+    ""
   end
 
   def n_like(o)
@@ -36,6 +38,29 @@ module ApplicationHelper
       button_to "关注他", follow_user_path(v), :remote => true, class: "btn btn-success btn-xs" 
     else 
       button_to "已经关注", unfollow_user_path(v), :remote => true, class: "btn btn-default btn-xs" 
+    end
+  end
+
+  def title_or_name(o)
+    u = ""
+    if o.class == User
+      u = o.name
+    elsif o.class == Review
+      u = o.title
+    end
+
+    u || "?"
+  end
+
+  def safe_place_name(name)
+    name || "无人之境"
+  end
+
+  def link_to_place(place)
+    if place
+      link_to_trackable place, safe_place_name(place.try(:name))
+    else
+      safe_place_name(place.try(:name))
     end
   end
 end

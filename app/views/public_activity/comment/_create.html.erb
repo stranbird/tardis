@@ -1,1 +1,22 @@
-<li><%= link_to a.owner.email, a.owner if a.owner %> 发表了 <%= link_to_trackable a.trackable, a.trackable_type %><span style="float: right;"><%= time_ago_in_words a.created_at %> 之前</span></li> 
+<% user = User.find(a.owner_id) %>
+<% comment = a.trackable %>
+
+<div class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag user.avatar, size: "64x64" %>
+  </a>
+  <div class="media-body">
+    <h5 class="media-heading">
+      <%= link_to user.name || user.email %> 评论了「<%= link_to_trackable comment.commentable, title_or_name(comment.commentable) %>」
+    </h5>
+    <%= truncate comment.body %>
+    <div class="bt">
+      <span class="time"><%= printDate(a) %></span>
+
+      <div class="pull-right">
+        <%= render partial: "public_activity/like_i", locals: { likable: comment.commentable } %>
+        <%= render partial: "public_activity/comment_i", locals: { commentable: comment.commentable } %>  
+      </div>
+    </div>
+  </div>
+</div>
