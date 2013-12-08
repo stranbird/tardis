@@ -56,3 +56,5 @@ gem 'markable'
 gem 'thin'
 
 gem "font-awesome-rails"
+
+gem "paperclip", "~> 3.0"
