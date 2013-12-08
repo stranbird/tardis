@@ -1,3 +1,52 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.user-card {
+  border: 1px solid #aaa9a8;
+  // width: 310px;
+  width: 283px;
+  height: 190px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 14px;
+  border-radius: 2px;
+  color: #999;
+  vertical-align: top;
+  padding: 20px;
+
+  .link-wrapper {
+    float: left;
+    
+  }
+
+  .avatar {
+    height: 60px;
+    width: 60px;
+  }
+
+
+  .right-col {
+    margin-left: 10px;
+    float: left;
+
+    .name {
+      vertical-align: top;
+      font-size: 18px;
+      display: block;
+    }
+
+    .actions {
+      float: left;
+      margin-top: 18px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .line {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+}

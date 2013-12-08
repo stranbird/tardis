@@ -1,0 +1,23 @@
+<div class="user-card">
+  <%= link_to user, class: "link-wrapper" do %>
+    <%= image_tag user.avatar, class: "avatar" %>
+  <% end -%>
+
+
+  <div class="right-col">
+    <%= link_to user.name || user.email, user_path(user), class: "name" %>
+
+    <div class="actions">
+      <button class="btn btn-primary btn-xs">留言</button>
+      <button class="btn btn-primary btn-xs" data-toggle="modal" href="<%= new_user_message_path(current_user) + "?to=#{user.id}" %>" data-target="#myModal">站内信</button>
+    </div>
+  </div>
+    
+
+  <div class="line clrfix"></div>
+
+  <div class="latest-update">
+    <b>最近更新：</b>
+    <%= render_activity(user.latest_activity) %>
+  </div>
+</div>

@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
 
   acts_as_marker
 
-
+  def latest_activity
+    PublicActivity::Activity.where(:owner_id => id).order(:id).last
+  end
 
 end
