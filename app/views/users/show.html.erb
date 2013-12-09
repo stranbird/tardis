@@ -10,7 +10,10 @@
            source: <%= raw activities_to_json(@activities) %>,
            // source: "/example_json.json",
            embed_id: 'time_line',
-           lang: "zh-cn"
+           lang: "zh-cn",
+           start_zoom_adjust: -3,
+           strat_at_end: true
+
          });
        });
     </script>    

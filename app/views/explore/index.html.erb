@@ -20,17 +20,6 @@
 
   var markersArray = [];
 
-  // handler.map.callback = function() {
-  //   alert("2");
-    // var marker = handler.map.markers[0];
-    // if (marker) {
-    //   // Move existing marker when editing a previously stored location
-    //   google.maps.event.addListener(marker.serviceObject, 'dragend', function() {
-    //     updateFormLocation(this.getPosition());
-    //   });
-    // }
-
-    // // On click, clear markers, place a new one, update coordinates in the form
   google.maps.event.addListener(handler.map.serviceObject, 'click', function(event) {
     // clearOverlays();
     placeMarker(event.latLng);

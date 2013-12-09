@@ -44,6 +44,7 @@ Tardis::Application.routes.draw do
   resources :places do
     member do
       get :toggle_visit
+      post :toggle_visit
     end
   end
 

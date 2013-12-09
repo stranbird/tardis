@@ -1,6 +1,6 @@
 require 'json'
 
-raw_j = File.read("../../public/poi.json")
+raw_j = File.read("public/poi.json")
 j = JSON.parse(raw_j)
 
 j.each_pair do |k, v|
