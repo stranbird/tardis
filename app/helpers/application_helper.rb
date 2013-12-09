@@ -120,4 +120,19 @@ module ApplicationHelper
 
     skelton_h.to_json
   end
+
+  def suggestion_reason(str)
+    if str == "primary"
+      "附近的人"
+    elsif str ==  "success"
+      "共同喜好多"
+    elsif str ==  "info"
+      "热门用户"
+    elsif str ==  "warning"
+      "喜欢"
+    elsif str == "danger"
+      "共同好友多"
+    end
+
+  end
 end

@@ -1,21 +1,33 @@
 <div class="user-card" id="user-card-<%= user.id %>">
-  <%= link_to user, class: "link-wrapper" do %>
-    <%= image_tag user.avatar, class: "avatar" %>
-  <% end -%>
+  <%#= link_to user, class: "link-wrapper pull-left" do %>
+    <%#= image_tag user.avatar, class: "avatar" %>
+  <%# end -%>
+
+  <div class="media">
+    <%= link_to user, class: "pull-left" do %>
+      <%= image_tag user.avatar, class: "media-object avatar" %>
+    <% end -%>
 
 
-  <div class="right-col">
-    <%= link_to user.name || user.email, user_path(user), class: "name" %>
+    <!-- <div class="right-col"> -->
+    <div class="media-body">
+      <%= link_to user.name || user.email, user_path(user), class: "name" %>
 
-    <div class="actions">
-      <button class="btn btn-primary btn-xs">留言</button>
-      <button class="btn btn-primary btn-xs" data-toggle="modal" href="<%= new_user_message_path(current_user) + "?to=#{user.id}" %>" data-target="#myModal">站内信</button>
+      <% if params[:action] == "friends" %>
+        <span class="label label-<%= cycle("warning", "danger", "primary","success","info") %> pull-right"><%= suggestion_reason(current_cycle) %></span>
+      <% end %>
 
-      <%= follow_button current_user, user %>
+      <div class="actions" style="margin-top: 18px;">
+        <button class="btn btn-primary btn-xs">留言</button>
+        <button class="btn btn-primary btn-xs" data-toggle="modal" href="<%= new_user_message_path(current_user) + "?to=#{user.id}" %>" data-target="#myModal">站内信</button>
+
+        <%= follow_button current_user, user %>
 
 
-    </div>
+      </div>
+    </div>  
   </div>
+  
     
 
   <div class="line clrfix"></div>

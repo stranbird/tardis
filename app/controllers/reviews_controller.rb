@@ -98,4 +98,8 @@ class ReviewsController < ApplicationController
 
     redirect_to :back
   end
+
+  def timeline_mode
+    render layout: nil    
+  end
 end

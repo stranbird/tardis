@@ -8,6 +8,8 @@ Tardis::Application.routes.draw do
     member do
       get :like, :unlike
     end
+
+    get :timeline_mode
   end
 
 
