@@ -1,13 +1,17 @@
 <div class="col-md-8">
-  <div class="content-main highlight">
-
-    <div class="row">
-      <%= image_tag "/img/p1931122747.jpg", class: "col-md-5" %>
-
-      <div class="col-md-7">
-      </div>
-
-    </div>
+  <div class="content-main highlight" id="timeline-wrapper">
+    <div id="time_line"></div>
+    <script>
+      $(document).ready(function() {
+         createStoryJS({
+           type: 'timeline',
+           width: '100%',
+           height: '215',
+           source: 'https://docs.google.com/spreadsheet/pub?key=0Agl_Dv6iEbDadHdKcHlHcTB5bzhvbF9iTWwyMmJHdkE&amp;output=html',
+           embed_id: 'time_line'
+         });
+       });
+    </script>
   </div>
 
   <div class="content-main highlight timeline">

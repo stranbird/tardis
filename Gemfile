@@ -58,3 +58,4 @@ gem 'thin'
 gem "font-awesome-rails"
 
 gem "paperclip", "~> 3.0"
+gem 'timelineJS-rails', '~> 1.1.1'

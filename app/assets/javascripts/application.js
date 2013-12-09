@@ -15,4 +15,5 @@
 //= require bootstrap.min
 //= require underscore-min
 //= require gmaps/google
+//= require timelineJS/embed
 //= require_tree .

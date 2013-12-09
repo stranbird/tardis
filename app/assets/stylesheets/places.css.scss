@@ -130,4 +130,8 @@ ul.pla_poilist {
   &:hover {
     text-decoration: none;  
   }
+
+  &.thumbnail {
+    background-image: none;
+  }
 }
