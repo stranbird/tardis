@@ -16,4 +16,5 @@
 //= require underscore-min
 //= require gmaps/google
 //= require timelineJS/embed
+//=require timelineJS/locale/zh-cn
 //= require_tree .

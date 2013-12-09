@@ -63,4 +63,61 @@ module ApplicationHelper
       safe_place_name(place.try(:name))
     end
   end
+
+  def a_headline(a)
+    user = User.find(a.owner_id)
+    if a.key == "comment.create"
+      comment = a.trackable
+      raw "#{link_to user.name || user.email}评论了「#{link_to_trackable comment.commentable, title_or_name(comment.commentable)}」"
+    elsif a.key == "review.like"
+      review = a.trackable
+      place = review.place
+      raw "#{link_to user.name || user.email} 喜欢了「#{link_to_place review.place}」的游记「#{link_to review.title, review}」"
+    elsif a.key == "place.visited"
+      place = a.trackable
+      raw "#{link_to user.name || user.email}去过「#{link_to_trackable place, place.name}」"
+    elsif a.key == "review.create"
+      review = a.trackable
+      place = review.place
+      raw "#{link_to user.name || user.email}发表了「#{link_to_place review.place}」的游记「#{link_to review.title, review}」"
+    end
+  end
+
+  def short_date(dt)
+    dt = Time.now if dt.nil?
+    dt.strftime("%Y,%m,%-d")
+  end
+
+  def activity_to_json(a)
+    h = {
+        startDate: short_date(a.created_at),
+        headline: a_headline(a),
+        text: "",
+        asset:
+        {
+            media: "",
+            credit: "",
+            caption: ""
+        }
+    }
+  end
+
+  def activities_to_json(activities)
+    skelton_h = {
+      timeline: 
+      {
+        headline: "时间线",
+        type: "default",
+        text: "",
+        startDate: short_date(activities.first.created_at),
+        date: [ ]
+      }
+    }
+
+    activities.each do |a|
+      skelton_h[:timeline][:date] << activity_to_json(a)
+    end
+
+    skelton_h.to_json
+  end
 end

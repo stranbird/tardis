@@ -8,7 +8,7 @@
   </a>
   <div class="media-body">
     <h5 class="media-heading">
-      <%= link_to user.name || user.email %> 喜欢了「<%= link_to_place review.place %>」的游记「<%= link_to review.title, review %>」
+      <%= a_headline(a) %>
     </h5>
     <%= truncate review.content %>
     <div class="bt">

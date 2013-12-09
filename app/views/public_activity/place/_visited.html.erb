@@ -7,7 +7,7 @@
   </a>
   <div class="media-body">
     <h5 class="media-heading">
-      <%= link_to user.name || user.email %> 去过「<%= link_to_trackable place, place.name  %>」
+      <%= a_headline(a) %>
     </h5>
     <%= render partial: "places/card", locals: { place: place } %>
     <div class="bt">

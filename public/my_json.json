@@ -1,0 +1,21 @@
+{"timeline":
+  {
+    "headline":"时间线",
+    "type":"default",
+    "text":"",
+    "startDate":"2013,12,6",
+    "date":[
+      {
+        "startDate":"2013,12,6",
+        "headline":"?",
+        "text":"",
+        "asset":
+          {
+            "media":"",
+            "credit":"",
+            "caption":""
+          }
+      }
+    ]
+  }
+}

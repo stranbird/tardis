@@ -7,7 +7,7 @@
   </a>
   <div class="media-body">
     <h5 class="media-heading">
-      <%= link_to user.name || user.email %> 评论了「<%= link_to_trackable comment.commentable, title_or_name(comment.commentable) %>」
+      <%= a_headline(a) %>
     </h5>
     <%= truncate comment.body %>
     <div class="bt">
