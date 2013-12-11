@@ -109,7 +109,7 @@ module ApplicationHelper
         headline: "时间线",
         type: "default",
         text: "",
-        startDate: short_date(activities.first.created_at),
+        startDate: short_date(activities.first.try("created_at")),
         date: [ ]
       }
     }
